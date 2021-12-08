@@ -19,14 +19,8 @@ class AppFonts {
     ));
   }
 
-  static final primaryHeader = getAppFont(
-    fontSize: 35,
-    fontWeight: FontWeight.normal,
-    color: TextColors.primaryTextColor,
-    letterSpacing: 0,
-  );
   static final title = getAppFont(
-    fontSize: 35,
+    fontSize: 30,
     fontWeight: FontWeight.bold,
     color: TextColors.primaryTextColor,
     letterSpacing: 0,
@@ -37,29 +31,22 @@ class AppFonts {
     color: TextColors.primaryTextColor,
     letterSpacing: 0,
   );
-  static final boldprimaryHeader = getAppFont(
-    fontSize: 32,
-    fontWeight: FontWeight.normal,
-    color: TextColors.primaryTextColor,
-    letterSpacing: -0.5,
-  );
-
-  static final secondaryHeader = getAppFont(
-    fontSize: 23,
-    fontWeight: FontWeight.normal,
-    color: TextColors.primaryTextColor,
-    letterSpacing: 0,
-  );
-  static final hintText = getAppFont(
+  static final smallNote = getAppFont(
     fontSize: 15,
-    fontWeight: FontWeight.bold,
-    color: TextColors.hintTextColor,
+    fontWeight: FontWeight.normal,
+    color: TextColors.primaryTextColor,
     letterSpacing: 0,
   );
-  static final hintTextOne = getAppFont(
-    fontSize: 14,
+  static final smalltitle = getAppFont(
+    fontSize: 18,
     fontWeight: FontWeight.bold,
-    color: TextColors.hintTextColor,
+    color: TextColors.primaryTextColor,
+    letterSpacing: 0,
+  );
+  static final createdAt = getAppFont(
+    fontSize: 12,
+    fontWeight: FontWeight.normal,
+    color: TextColors.primaryTextColor,
     letterSpacing: 0,
   );
   static final notesHeader = getAppFont(

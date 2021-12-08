@@ -1,5 +1,5 @@
-import 'package:notesapp/services/services.dart';
-import 'package:notesapp/models/models.dart';
+import 'package:Notes/services/services.dart';
+import 'package:Notes/models/models.dart';
 
 class NotesService {
   static saveNoteLocally(Note note) {

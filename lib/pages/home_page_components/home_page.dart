@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:notesapp/styles/styles.dart';
-import 'package:notesapp/pages/home_page_components/home_page_components.dart';
-import 'package:notesapp/models/models.dart';
-import 'package:notesapp/services/services.dart';
+import 'package:Notes/styles/styles.dart';
+import 'package:Notes/pages/home_page_components/home_page_components.dart';
+import 'package:Notes/models/models.dart';
+import 'package:Notes/services/services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   List<String> notes = [];
   @override
   bool selected = true;
+  bool selectlist = true;
   var Change = Colors.white;
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,16 +24,9 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.topLeft,
             child: Text('NotesApp', style: AppFonts.notesHeader),
           ),
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [Colors.blue, Colors.blue],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter)),
-          ),
           actions: <Widget>[
             Padding(
-              padding: EdgeInsets.only(right: 140, top: 5),
+              padding: EdgeInsets.only(right: 60, top: 5),
               child: IconButton(
                 icon: Icon(selected
                     ? Icons.dark_mode_outlined
@@ -46,6 +40,19 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
               ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 10, top: 5),
+              child: IconButton(
+                icon: Icon(selectlist
+                    ? Icons.view_list_outlined
+                    : Icons.grid_view_outlined),
+                onPressed: () {
+                  setState(() {
+                    selectlist = !selectlist;
+                  });
+                },
+              ),
             )
           ]),
       bottomNavigationBar: BottomAppBar(
@@ -53,7 +60,17 @@ class _HomePageState extends State<HomePage> {
         shape: const CircularNotchedRectangle(),
         notchMargin: 6.0,
         child: Container(
-          height: 50.0,
+          height: 50,
+          child: Padding(
+            padding: EdgeInsets.only(left: 14, top: 4),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Tap Icon', style: AppFonts.smalltitle),
+                Text('To Add A New Note', style: AppFonts.smalltitle),
+              ],
+            ),
+          ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -75,7 +92,6 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         children: [
           NotesWidget(),
-
         ],
       ),
     );

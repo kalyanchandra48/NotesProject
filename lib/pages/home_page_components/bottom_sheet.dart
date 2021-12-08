@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:notesapp/styles/styles.dart';
-import 'package:notesapp/models/models.dart';
-import 'package:notesapp/services/services.dart';
-import 'package:notesapp/services/notes_service.dart';
+import 'package:Notes/styles/styles.dart';
+import 'package:Notes/models/models.dart';
+import 'package:Notes/services/services.dart';
+import 'package:Notes/services/notes_service.dart';
+import 'dart:math';
 
 class BottomSheetWidget extends StatefulWidget {
   Note? note;
@@ -54,6 +55,16 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
             decoration: InputDecoration(
                 border: InputBorder.none, hintText: 'Take a Note..'),
             style: AppFonts.note,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: CircleAvatar(
+                radius: 20,
+                backgroundColor: Colors.white,
+                child: Icon(Icons.image_outlined, size: 35)),
           ),
           SizedBox(
             height: 10,

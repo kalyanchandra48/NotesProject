@@ -1,4 +1,4 @@
-import 'package:notesapp/models/models.dart';
+import 'package:Notes/models/models.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'dart:async';

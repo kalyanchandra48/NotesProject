@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:hive/hive.dart' show Box;
-import 'package:notesapp/services/services.dart';
+import 'package:Notes/services/services.dart';
 
 enum BOX_NAME {
   NOTES_BOX,
