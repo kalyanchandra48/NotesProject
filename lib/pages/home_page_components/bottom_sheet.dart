@@ -59,16 +59,6 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
           SizedBox(
             height: 10,
           ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: CircleAvatar(
-                radius: 20,
-                backgroundColor: Colors.white,
-                child: Icon(Icons.image_outlined, size: 35)),
-          ),
-          SizedBox(
-            height: 10,
-          ),
           GestureDetector(
             onTap: () {
               if (titleController.text == '') {
@@ -101,7 +91,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
               width: width * 3,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(40)),
-                  color: Colors.blue),
+                  color: AppColors.purple),
               child: Center(
                 child: Text(
                   'Save',

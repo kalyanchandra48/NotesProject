@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   bool selected = true;
   bool selectlist = true;
-  var Change = Colors.white;
+  var Change = AppColors.white;
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Change,
@@ -34,9 +34,9 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   setState(() {
                     selected = !selected;
-                    Change == Colors.white
-                        ? Change = Colors.black87
-                        : Change = Colors.white;
+                    Change == AppColors.white
+                        ? Change = AppColors.black
+                        : Change = AppColors.white;
                   });
                 },
               ),
@@ -56,9 +56,9 @@ class _HomePageState extends State<HomePage> {
             )
           ]),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.blue,
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 6.0,
+        color: AppColors.blue,
+        shape: CircularNotchedRectangle(),
+        notchMargin: 8.0,
         child: Container(
           height: 50,
           child: Padding(
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue[300],
-        onPressed: null,
+	onPressed:null,
         child: GestureDetector(
           onTap: () {
             showModalBottomSheet(
@@ -86,7 +86,8 @@ class _HomePageState extends State<HomePage> {
               },
             );
           },
-          child: Icon(Icons.note_add_outlined, size: 40, color: Colors.black),
+          child:
+              Icon(Icons.note_add_outlined, size: 40, color: AppColors.black),
         ),
       ),
       body: ListView(

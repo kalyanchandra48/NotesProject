@@ -16,12 +16,12 @@ class _NotesWidgetState extends State<NotesWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height - 186,
       child: ValueListenableBuilder(
           valueListenable: Global.boxes[BOX_NAME.NOTES_BOX]!.listenable(),
           builder: (context, Box box, wid) {
             final List<Note> notes = List<Note>.from(box.values);
             return ListView.builder(
+              physics: ClampingScrollPhysics(),
               shrinkWrap: true,
               itemCount: notes.length,
               itemBuilder: (BuildContext context, int index) {

@@ -45,7 +45,7 @@ class AppFonts {
   );
   static final createdAt = getAppFont(
     fontSize: 12,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.bold,
     color: TextColors.primaryTextColor,
     letterSpacing: 0,
   );

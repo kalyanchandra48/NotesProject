@@ -15,7 +15,7 @@ class NoteWidget extends StatelessWidget {
     required this.note,
     required this.index,
   });
-  Color color = Colors.white;
+  Color color = AppColors.white;
   updateNotes(BuildContext context) async {
     Global.boxes[BOX_NAME.NOTES_BOX]!.putAt(index, note);
     showModalBottomSheet(
@@ -36,7 +36,7 @@ class NoteWidget extends StatelessWidget {
 
   String getDate() {
     var now = new DateTime.now();
-    var formatter = new DateFormat('yyyy-MM-dd');
+    var formatter = new DateFormat('dd-MM-yyyy').add_jm();
     String formattedDate = formatter.format(now);
     return '$formattedDate';
   }
@@ -47,7 +47,6 @@ class NoteWidget extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.only(top: 10, left: 19, right: 19),
-          height: MediaQuery.of(context).size.height / 6,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(26)),
@@ -70,12 +69,20 @@ class NoteWidget extends StatelessWidget {
                   child: Text(this.note.notes, style: AppFonts.smallNote),
                 ),
               ),
+	      SizedBox(height:10,),
+              Padding(
+                  padding: EdgeInsets.only(bottom: 4, left: 20),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text('Created At ' + getDate(),
+                        style: AppFonts.createdAt),
+                  )),
             ],
           ),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height / 7.9,
-          left: MediaQuery.of(context).size.width / 1.17,
+          top: MediaQuery.of(context).size.height / 39,
+          left: MediaQuery.of(context).size.width / 1.18,
           child: GestureDetector(
             onTap: () {
               NotesService.deleteNoteLocally(note.id);
@@ -88,8 +95,8 @@ class NoteWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height / 7.9,
-          left: MediaQuery.of(context).size.width / 1.33,
+          top: MediaQuery.of(context).size.height / 39,
+          left: MediaQuery.of(context).size.width / 1.40,
           child: GestureDetector(
             onTap: () {
               updateNotes(context);
@@ -101,19 +108,14 @@ class NoteWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height / 6.7,
-          left: MediaQuery.of(context).size.width / 11,
-          child: Text('Created At ' + getDate(), style: AppFonts.createdAt),
-        ),
-        Positioned(
           top: MediaQuery.of(context).size.height / 39,
-          left: MediaQuery.of(context).size.width / 1.17,
+          left: MediaQuery.of(context).size.width / 1.8,
           child: GestureDetector(
             onTap: () {
               updateFav();
             },
             child: CircleAvatar(
-              radius: 10,
+              radius: 15,
               backgroundColor: Colors.transparent,
               child: Icon(
                 Icons.favorite,
